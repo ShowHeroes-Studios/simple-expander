@@ -1,1 +1,1 @@
-# simple-expander
+# Simple expander
