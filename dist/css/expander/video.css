@@ -1,0 +1,63 @@
+.expander-video {
+  position: relative;
+}
+.expander-video video {
+  aspect-ratio: 16/9;
+}
+.expander-video .play {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.expander-video .play:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+.expander-video .play::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 11;
+  width: 7.5%;
+  aspect-ratio: 1;
+  background: rgba(0, 0, 0, 0.2) url("../../assets/expander/play.svg") no-repeat center center/50% auto;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: background 0.15s;
+}
+.expander-video .play::after:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.expander-video.playing .play {
+  background: none;
+  cursor: default;
+}
+.expander-video.playing .play::after {
+  display: none;
+}
+.expander-video .sound {
+  position: absolute;
+  right: 1%;
+  top: 50%;
+  z-index: 10;
+  width: 5%;
+  aspect-ratio: 1;
+  background: rgba(0, 0, 0, 0.2) url("../../assets/expander/sound-on.svg") no-repeat center center/50% auto;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transform: translate(-50%, 0);
+  transition: background 0.15s;
+}
+.expander-video .sound.mute {
+  background: rgba(0, 0, 0, 0.2) url("../../assets/expander/sound-off.svg") no-repeat center center/50% auto;
+}
+.expander-video .sound:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}

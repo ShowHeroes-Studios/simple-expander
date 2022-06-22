@@ -1,0 +1,69 @@
+.expander-video {
+    position: relative;
+
+    video {
+        aspect-ratio: 16/9;
+    }
+
+    .play {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(#000, .2);
+        z-index: 10;
+        cursor: pointer;
+        transition: background .15s;
+        &:hover {
+            background: rgba(#000, .1);
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 11;
+            width: 7.5%;
+            aspect-ratio: 1;
+            background: rgba(#000, .2) url('../../assets/expander/play.svg') no-repeat center center / 50% auto;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: background .15s;
+            &:hover {
+                background-color: rgba(#000, .4);
+            }
+        }
+    }
+    &.playing {
+        .play {
+            background: none;
+            cursor: default;
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+
+    .sound {
+        position: absolute;
+        right: 1%;
+        top: 50%;
+        z-index: 10;
+        width: 5%;
+        aspect-ratio: 1;
+        background: rgba(#000, .2) url('../../assets/expander/sound-on.svg') no-repeat center center / 50% auto;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        transform: translate(-50%, 0);
+        transition: background .15s;
+        &.mute {
+            background: rgba(#000, .2) url('../../assets/expander/sound-off.svg') no-repeat center center / 50% auto;
+        }
+        &:hover {
+            background-color: rgba(#000, .4);
+        }
+    }
+}

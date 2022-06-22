@@ -1,0 +1,61 @@
+html {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    color: $color-text;
+    line-height: 1.25;
+    background-color: $color-2;
+}
+
+.expander {
+    width: $width;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.section {
+    margin: 2rem 0;
+}
+
+.padded {
+    padding: 0 1.5rem;
+}
+
+.hero {
+    padding: 3rem;
+    text-align: center;
+}
+
+.tiles {
+    @include d {
+        .tile {
+            display: flex;
+            .text,
+            .image,
+            .video {
+                width: 50%;
+            }
+            .text {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                padding: 1.5rem;
+                order: 1;
+            }
+            .image,
+            .video {
+                order: 2;
+            }
+            &.tile--alt {
+                .text {
+                    order: 2;
+                }
+                .image,
+                .video {
+                    order: 1;
+                }
+            }
+        }
+    }
+}

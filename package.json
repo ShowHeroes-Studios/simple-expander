@@ -1,0 +1,22 @@
+{
+  "name": "simple-expander",
+  "version": "0.0.1",
+  "description": "Simple expander template",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch --update --no-source-map --style=expanded scss:dist/css/expander"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ondrejshowhero/simple-expander.git"
+  },
+  "author": "showheroes.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ondrejshowhero/simple-expander/issues"
+  },
+  "homepage": "https://github.com/ondrejshowhero/simple-expander#readme",
+  "devDependencies": {
+    "sass": "^1.52.3"
+  }
+}
