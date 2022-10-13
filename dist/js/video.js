@@ -27,7 +27,7 @@
         promise = video.play()
         if (promise) {
             promise.catch((error) => {
-                // autoplay with sound didn"t work. mute the video and try again
+                // autoplay with sound didn't work, mute the video and try again
                 video.muted = true
                 video.play()
                 // add unmute button

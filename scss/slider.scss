@@ -1,31 +1,30 @@
 .expander-slider {
     position: relative;
     padding-bottom: 2rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
 
     .tns-controls {
         outline: 0;
         button {
             position: absolute;
-            top: 50%;
+            top: 0;
             z-index: 10;
-            height: 1.75rem;
-            width: 1.75rem;
+            height: 100%;
+            width: 2rem;
             background: none;
             border: 0;
             text-indent: -2000%;
             overflow: hidden;
-            border-radius: 50%;
-            background-color: #fff;
             opacity: .9;
             transition: opacity .15s;
-            transform: translate(-50%, 0);
             &:first-child {
                 left: 1rem;
-                background: url('../../assets/expander/chevron-left.svg') no-repeat center center / contain;
+                background: url('../../assets/expander/chevron-left.svg') no-repeat center center / 2rem auto;
             }
             &:last-child {
                 right: 1rem;
-                background: url('../../assets/expander/chevron-right.svg') no-repeat center center / contain;
+                background: url('../../assets/expander/chevron-right.svg') no-repeat center center / 2rem auto;
             }
             &:hover {
                 opacity: 1;

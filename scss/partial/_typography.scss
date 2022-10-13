@@ -1,12 +1,14 @@
 h1,
 .heading {
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: bold;
     line-height: 1.1;
 }
 
 h2,
 .subheading {
+    margin-top: var(--padding-base);
+    margin-bottom: calc(var(--padding-base) / 2);
     font-size: 1.5rem;
     font-weight: bold;
 }
@@ -16,7 +18,19 @@ h3,
     font-size: 1.125rem;
     font-weight: bold;
 }
+.heading,
+.subheading,
+.title {
+    color: var(--color-main);
+}
+
+p + p {
+    margin-top: calc(var(--padding-base) / 2);
+}
 
 .lead {
+    margin: var(--padding-base) auto;
+    font-size: 1.5rem;
     font-weight: bold;
+    color: var(--color-secondary)
 }

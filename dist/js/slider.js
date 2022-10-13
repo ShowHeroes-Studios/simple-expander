@@ -4,12 +4,18 @@
         let settings = element.dataset
         let slider = tns({
             container: element,
-            items: settings.items || 3,
+            items: settings.items || 1,
             autoplay: settings.autoplay !== undefined || false,
             autoplayButtonOutput: false,
             loop: settings.loop !== undefined || false,
-            controls: settings.controls !== undefined || false,
-            nav: settings.nav !== undefined || false
+            controls: true,
+            nav: true,
+            gutter: settings.gap || 20,
+            responsive: {
+                480: {
+                    items: settings.desktopItems || 3,
+                }
+            }
         })
     })
 })()

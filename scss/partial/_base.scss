@@ -1,32 +1,102 @@
+:root {
+    --color-main: #0b3144;
+    --color-secondary: #00ffae;
+    --color-text: #333;
+    --color-background: #fff;
+
+    --weight-bold: bold;
+
+    --padding-base: 2rem;
+}
 html {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: normal;
-    font-size: 16px;
-    color: $color-text;
+    font-size: var(--font-size);
+    color: var(--color-text);
     line-height: 1.25;
-    background-color: $color-2;
+    background-color: var(--color-background);
+    @include desktop {
+        font-size: 1.48vw;
+    }
+    @media (min-width: $width) {
+        font-size: 16px;
+    }
 }
 
 .expander {
     width: $width;
     max-width: 100%;
     margin: 0 auto;
+    padding-bottom: calc(var(--padding-base) * 3);
 }
 
 .section {
-    margin: 2rem 0;
+    margin: calc(var(--padding-base) * 2) 0;
+    padding: 0 var(--padding-base);
 }
 
-.padded {
-    padding: 0 1.5rem;
-}
-
-.hero {
-    padding: 3rem;
+.centered {
     text-align: center;
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--padding-base);
+}
+
+.cta {
+    display: inline-block;
+    padding: calc(var(--padding-base) / 4) var(--padding-base);
+    font-size: 1.5rem;
+    color: #fff;
+    background: var(--color-main);
+    text-decoration: none;
+    font-weight: var(--weight-bold);
+    border-radius: calc(var(--padding-base) / 2.5);
+    transition: background .25s, color .25s;
+    &:hover {
+        color: var(--color-main);
+        background: var(--color-secondary);
+    }
+}
+
+.hero {
+    > img,
+    > picture,
+    > video {
+        display: block;
+        width: 100%;
+    }
+}
+
+.card {
+    .image {
+        img,
+        picture {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
 .tiles {
+    .tile {
+        .text {
+            padding: var(--padding-base);
+        }
+        .image,
+        .video {
+            img,
+            picture,
+            video {
+                display: block;
+                width: 100%;
+                max-width: none;
+            }
+        }
+    }
     @include d {
         .tile {
             display: flex;
@@ -40,14 +110,14 @@ html {
                 flex-direction: column;
                 justify-content: center;
                 align-items: flex-start;
-                padding: 1.5rem;
+                padding: calc(var(--padding-base) / 2) var(--padding-base);
                 order: 1;
             }
             .image,
             .video {
                 order: 2;
             }
-            &.tile--alt {
+            &:nth-child(even) {
                 .text {
                     order: 2;
                 }
@@ -57,5 +127,28 @@ html {
                 }
             }
         }
+    }
+}
+
+.sticky-cta {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(var(--padding-base) * 2);
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: var(--weight-bold);
+    background: var(--color-main);
+    border-radius: calc(var(--padding-base) / 2.5) calc(var(--padding-base) / 2.5) 0 0;
+    transition: background .25s, color .25s;
+    &:hover {
+        color: var(--color-main);
+        background: var(--color-secondary);
     }
 }

@@ -7,25 +7,30 @@
 
     <title>Simple expander</title>
 
-    <!-- /* Basic expander styles, typgraphy etc. -->
+    <!-- Basic expander styles, typgraphy, fallback settings etc. -->
     <link rel="stylesheet" href="css/expander/main.css">
-    <!-- */ -->
 
-    <!-- /* Standalone modules. Unused modules can be deleted. -->
+    <!-- Video module -->
     <link rel="stylesheet" href="css/expander/video.css">
-    <link rel="stylesheet" href="css/expander/scroller.css">
+
+    <!-- Slider module -->
     <link rel="stylesheet" href="css/expander/slider.css">
     <link rel="stylesheet" href="css/vendor/tiny-slider.css">
-    <!-- */ -->
 
-    <!-- /* Custom design shall be adjusted within this file. -->
+    <!-- Custom design shall be adjusted within this file. -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- */ -->
 
   </head>
   <body>
     
     <div class="expander">
+
+      <header class="header">
+        <span class="logo">
+          <img src="assets/logo.png" width="300">
+        </span>
+        <a href="https://showheroes.com/" target="_blank" class="cta">About us ></a>
+      </header>
 
       <section class="expander-video">
         <video autoplay playisinline>
@@ -34,7 +39,7 @@
       </section>
 
 
-      <section class="hero padded">
+      <section class="section centered">
         <h1 class="heading">CONNECTING THE WORLD TO VIDEO</h1>
         <p class="lead">
           ShowHeroes is a global leader in digital video content, tech, and advertising solutions.
@@ -42,7 +47,7 @@
       </section>
 
 
-      <section class="section padded">
+      <section class="section">
         <h2 class="subheading">Who we are</h2>
         <p>
           ShowHeroes helps publishers create the best content for their audiences while generating ad revenues within editorial environments. Advertisers reach new consumers in brand-safe environments with engaging formats and sustainable, reliable results.
@@ -50,6 +55,13 @@
         <p>
           The company was founded by Ilhan Zengin, Mario Tiedemann, and Dennis Kirschner in 2016 with headquarters in Berlin and employs more than 350 people worldwide in 28 strategic hubs throughout Europe, the Nordics, LATAM, and the US.
         </p>
+      </section>
+
+      <section class="hero">
+        <img src="assets/image-1.jpg">
+      </section>
+
+      <section class="section">
         <h2 class="subheading">What we do</h2>
         <p>
           Our global lineup of professional, video-centric publisher solutions include ShowHeroes Monetize, a video licensing and monetization platform, and ShowHeroes Play, a full-featured Online Video Platform (OVP), geared towards large, professional media brands looking for video asset and content management tools.
@@ -59,42 +71,9 @@
         </p>
       </section>
 
-
-      <section class="expander-slider">
-        <div class="slider slider-1" data-items="3" data-loop data-autoplay data-nav data-controls>
-          <div class="item">
-            <img src="https://campaigns.adten.eu/templates/simple-expander/brand-1.png">
-          </div>
-          <div class="item">
-            <img src="https://campaigns.adten.eu/templates/simple-expander/brand-2.png">
-          </div>
-          <div class="item">
-            <img src="https://campaigns.adten.eu/templates/simple-expander/brand-3.png">
-          </div>
-          <div class="item">
-            <img src="https://campaigns.adten.eu/templates/simple-expander/brand-4.png">
-          </div>
-          <div class="item">
-            <img src="https://campaigns.adten.eu/templates/simple-expander/brand-5.png">
-          </div>
-          <div class="item">
-            <img src="https://campaigns.adten.eu/templates/simple-expander/brand-6.png">
-          </div>
-          <div class="item">
-            <img src="https://campaigns.adten.eu/templates/simple-expander/brand-7.png">
-          </div>
-          <div class="item">
-            <img src="https://campaigns.adten.eu/templates/simple-expander/brand-8.png">
-          </div>
-          <div class="item">
-            <img src="https://campaigns.adten.eu/templates/simple-expander/brand-9.png">
-          </div>
-          <div class="item">
-            <img src="https://campaigns.adten.eu/templates/simple-expander/brand-10.png">
-          </div>
-        </div>
-      </section>
-
+      <div class="section centered">
+        <a href="https://showheroes.com/" target="_blank" class="cta">Read more ></a>
+      </div>
 
       <section class="tiles">
 
@@ -137,12 +116,67 @@
       </section>
 
 
-      <section class="expander-scroller">
+      <section class="expander-slider my-custom-slider">
+        <div class="slider" data-items="1" data-desktop-items="3" data-loop data-autoplay data-gap="32">
+          <div class="item">
+            <div class="image">
+              <img src="assets/slide-1.jpg">
+            </div>
+            <h3 class="title">Lorem ipsum</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+          </div>
+          <div class="item">
+            <div class="image">
+              <img src="assets/slide-2.jpg">
+            </div>
+            <h3 class="title">Lorem ipsum</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+          </div>
+          <div class="item">
+            <div class="image">
+              <img src="assets/slide-3.jpg">
+            </div>
+            <h3 class="title">Lorem ipsum</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+          </div>
+          <div class="item">
+            <div class="image">
+              <img src="assets/slide-4.jpg">
+            </div>
+            <h3 class="title">Lorem ipsum</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+          </div>
+          <div class="item">
+            <div class="image">
+              <img src="assets/slide-5.jpg">
+            </div>
+            <h3 class="title">Lorem ipsum</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+          </div>
+        </div>
       </section>
+
+      <a class="sticky-cta" href="https://showheroes.com/" target="_blank">
+        Visit us >
+      </a>
+
 
     </div>
 
+    <!-- Video module -->
     <script src="js/video.js"></script>
+
+    <!-- Slider module -->
     <script src="js/vendor/tiny-slider.js"></script>
     <script src="js/slider.js" defer></script>
 
