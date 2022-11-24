@@ -41,9 +41,13 @@ html {
 
 .header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     padding: var(--padding-base);
+    @include desktop {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 .cta {

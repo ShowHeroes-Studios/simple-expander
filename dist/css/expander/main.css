@@ -138,9 +138,15 @@ html {
 
 .header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   padding: var(--padding-base);
+}
+@media (min-width: 481px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .cta {
