@@ -20,6 +20,7 @@
             else
                 video.play()
         })
+        element.appendChild(playButton)
 
         if (!video.hasAttribute("autoplay"))
             return
@@ -38,11 +39,11 @@
                         video.muted = false
                         soundButton.classList.add("mute")
                     } else {
-                        video.muted = false
+                        video.muted = true
                         soundButton.classList.remove("mute")
                     }
                 })
-                element.appendChild(playButton)
+                element.appendChild(soundButton)
             })
         }
     })

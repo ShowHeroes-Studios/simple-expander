@@ -57,7 +57,7 @@
         background: rgba(#000, .2) url('../../assets/expander/sound-on.svg') no-repeat center center / 50% auto;
         border-radius: 50%;
         border: 2px solid #fff;
-        transform: translate(-50%, 0);
+        transform: translate(0, -50%);
         transition: background .15s;
         &.mute {
             background: rgba(#000, .2) url('../../assets/expander/sound-off.svg') no-repeat center center / 50% auto;
