@@ -38,6 +38,12 @@ html {
 }
 
 
+@media (max-width: 480px) {
+    .header .cta {
+        margin-top: 1rem;
+    }
+}
+
 @media (min-width: 481px) {
     .heading {
         font-size: 3rem;
