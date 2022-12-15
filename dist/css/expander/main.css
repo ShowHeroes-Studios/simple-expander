@@ -244,6 +244,58 @@ html {
   background: var(--color-secondary);
 }
 
+.scroll-down-button {
+  position: fixed;
+  left: 50%;
+  bottom: 20%;
+  width: 3rem;
+  height: 3rem;
+  transform: translate(-50%, 0);
+  z-index: 1000;
+}
+.scroll-down-button::before, .scroll-down-button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../../assets/expander/down.svg") no-repeat center center/contain;
+}
+.scroll-down-button::before {
+  animation: scrollDown 2s linear 0s infinite forwards;
+}
+.scroll-down-button::after {
+  animation: scrollDown 2s linear -1s infinite forwards;
+}
+.scroll-down-button span {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.scroll-down-button.scrolled {
+  transition: 0.5s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes scrollDown {
+  0% {
+    margin-top: -33%;
+    opacity: 0;
+  }
+  25%, 50% {
+    opacity: 1;
+  }
+  100% {
+    margin-top: 33%;
+    opacity: 0;
+  }
+}
 h1,
 .heading {
   font-size: 3rem;
