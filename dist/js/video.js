@@ -22,29 +22,29 @@
         })
         element.appendChild(playButton)
 
-        if (!video.hasAttribute("autoplay"))
-            return
-
-        promise = video.play()
-        if (promise) {
-            promise.catch((error) => {
-                // autoplay with sound didn't work, mute the video and try again
-                video.muted = true
-                video.play()
-                // add unmute button
-                let soundButton = document.createElement("button")
-                soundButton.classList.add("sound")
-                soundButton.addEventListener("click", (e) => {
-                    if (video.muted) {
-                        video.muted = false
-                        soundButton.classList.add("mute")
-                    } else {
-                        video.muted = true
-                        soundButton.classList.remove("mute")
-                    }
+        if (video.hasAttribute("autoplay")) {
+            promise = video.play()
+            if (promise) {
+                promise.catch(() => {
+                    // autoplay with sound didn't work, mute the video and try again
+                    video.muted = true
+                    video.play()
+                    // add unmute button
+                    let soundButton = document.createElement("button")
+                    soundButton.classList.add("sound")
+                    soundButton.addEventListener("click", (e) => {
+                        if (video.muted) {
+                            video.muted = false
+                            soundButton.classList.add("mute")
+                        } else {
+                            video.muted = true
+                            soundButton.classList.remove("mute")
+                        }
+                    })
+                    element.appendChild(soundButton)
                 })
-                element.appendChild(soundButton)
-            })
+            }
         }
+
     })
 })()
