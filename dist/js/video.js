@@ -53,6 +53,8 @@
             }
         })
 
+        video.volume = .5
+
         if (video.hasAttribute("autoplay")) {
             promise = video.play()
             if (promise) {
