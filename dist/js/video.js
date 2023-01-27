@@ -22,6 +22,37 @@
         })
         element.appendChild(playButton)
 
+        let soundButton = document.createElement("button")
+        soundButton.classList.add("sound")
+        soundButton.addEventListener("click", (e) => {
+            if (video.muted) {
+                video.muted = false
+                video.volume = 1
+            } else if (video.volume < 1) {
+                video.muted = true
+            } else {
+                video.volume = .5
+            }
+        })
+        element.appendChild(soundButton)
+
+        video.addEventListener("volumechange", () => {
+            console.log(video.volume)
+            if (video.muted) {
+                element.classList.add("sound-off")
+                element.classList.remove("sound-half")
+                element.classList.remove("sound-on")
+            } else if (video.volume == 1) {
+                element.classList.remove("sound-off")
+                element.classList.remove("sound-half")
+                element.classList.add("sound-on")
+            } else {
+                element.classList.remove("sound-off")
+                element.classList.add("sound-half")
+                element.classList.remove("sound-on")
+            }
+        })
+
         if (video.hasAttribute("autoplay")) {
             promise = video.play()
             if (promise) {
@@ -29,19 +60,6 @@
                     // autoplay with sound didn't work, mute the video and try again
                     video.muted = true
                     video.play()
-                    // add unmute button
-                    let soundButton = document.createElement("button")
-                    soundButton.classList.add("sound")
-                    soundButton.addEventListener("click", (e) => {
-                        if (video.muted) {
-                            video.muted = false
-                            soundButton.classList.add("mute")
-                        } else {
-                            video.muted = true
-                            soundButton.classList.remove("mute")
-                        }
-                    })
-                    element.appendChild(soundButton)
                 })
             }
         }

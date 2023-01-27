@@ -54,7 +54,7 @@
   z-index: 10;
   width: 2.5rem;
   aspect-ratio: 1;
-  background: rgba(0, 0, 0, 0.2) url("../../assets/expander/sound-off.svg") no-repeat center center/50% auto;
+  background: rgba(0, 0, 0, 0.2) url("../../assets/expander/sound-on.svg") no-repeat center center/50% auto;
   border-radius: 50%;
   border: 2px solid #fff;
   transform: translate(0, -50%);
@@ -66,9 +66,12 @@
     width: 5%;
   }
 }
-.expander-video .sound.mute {
-  background: rgba(0, 0, 0, 0.2) url("../../assets/expander/sound-on.svg") no-repeat center center/50% auto;
-}
 .expander-video .sound:hover {
   background-color: rgba(0, 0, 0, 0.4);
+}
+.expander-video.sound-half .sound {
+  background-image: url("../../assets/expander/sound-half.svg");
+}
+.expander-video.sound-off .sound {
+  background-image: url("../../assets/expander/sound-off.svg");
 }

@@ -59,7 +59,7 @@
         z-index: 10;
         width: 2.5rem;
         aspect-ratio: 1;
-        background: rgba(#000, .2) url('../../assets/expander/sound-off.svg') no-repeat center center / 50% auto;
+        background: rgba(#000, .2) url('../../assets/expander/sound-on.svg') no-repeat center center / 50% auto;
         border-radius: 50%;
         border: 2px solid #fff;
         transform: translate(0, -50%);
@@ -68,11 +68,14 @@
             right: 1%;
             width: 5%;
         }
-        &.mute {
-            background: rgba(#000, .2) url('../../assets/expander/sound-on.svg') no-repeat center center / 50% auto;
-        }
         &:hover {
             background-color: rgba(#000, .4);
         }
+    }
+    &.sound-half .sound {
+        background-image: url('../../assets/expander/sound-half.svg');
+    }
+    &.sound-off .sound {
+        background-image: url('../../assets/expander/sound-off.svg');
     }
 }
