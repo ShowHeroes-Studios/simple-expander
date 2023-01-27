@@ -37,7 +37,6 @@
         element.appendChild(soundButton)
 
         video.addEventListener("volumechange", () => {
-            console.log(video.volume)
             if (video.muted) {
                 element.classList.add("sound-off")
                 element.classList.remove("sound-half")
@@ -53,7 +52,9 @@
             }
         })
 
-        video.volume = .5
+        if (video.hasAttribute("data-volume-half")) {
+            video.volume = .5
+        }
 
         if (video.hasAttribute("autoplay")) {
             promise = video.play()
