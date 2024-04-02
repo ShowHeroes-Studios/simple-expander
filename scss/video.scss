@@ -27,7 +27,7 @@
             top: 50%;
             z-index: 11;
             width: 3rem;
-            aspect-ratio: 1;
+            height: 3rem;
             background: rgba(#000, .2) url('../../assets/expander/play.svg') no-repeat center center / 50% auto;
             border: 2px solid #fff;
             border-radius: 50%;
@@ -35,6 +35,8 @@
             transition: background .15s;
             @include d {
                 width: 7.5%;
+                height: auto;
+                aspect-ratio: 1;
             }
             &:hover {
                 background-color: rgba(#000, .4);
@@ -58,7 +60,7 @@
         top: 50%;
         z-index: 10;
         width: 2.5rem;
-        aspect-ratio: 1;
+        height: 2.5rem;
         background: rgba(#000, .2) url('../../assets/expander/sound-on.svg') no-repeat center center / 50% auto;
         border-radius: 50%;
         border: 2px solid #fff;
@@ -67,6 +69,8 @@
         @include d {
             right: 1%;
             width: 5%;
+            height: auto;
+            aspect-ratio: 1;
         }
         &:hover {
             background-color: rgba(#000, .4);
