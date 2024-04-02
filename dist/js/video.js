@@ -27,11 +27,11 @@
         soundButton.addEventListener("click", (e) => {
             if (video.muted) {
                 video.muted = false
-                video.volume = 1
-            } else if (video.volume < 1) {
-                video.muted = true
-            } else {
                 video.volume = .5
+            } else if (video.volume < 1) {
+                video.volume = 1
+            } else {
+                video.muted = true
             }
         })
         element.appendChild(soundButton)
